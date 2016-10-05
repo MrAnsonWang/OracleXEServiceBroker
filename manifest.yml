@@ -1,0 +1,11 @@
+---
+applications:
+- name: oraclexesvcbrk
+  memory: 256M
+  instances: 1
+  host: oraclexesvcbrk
+  path: build/libs/oraclexesvcbrk-1.0.0-RELEASE.jar
+  env:
+    JAVA_OPTS: "-Duser.timezone=CST"
+  services:
+  - oraclexesvcbrk-metadata-database

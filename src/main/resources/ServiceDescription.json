@@ -1,0 +1,10 @@
+{
+	"name" : "oracle-xe",
+	"description" : "Oracle express database service",
+	"bindable" : true,
+	"tags" : ["oracle","relational"],
+	"metadata" : {
+		"longDescription" : "Experimental Oracle express database service. New service creates new tablespaces, Plan defines tablespaces and session quotas, Binding creates user",
+		"imageUrl" : "https://github.com/MrAnsonWang/OracleXEServiceBroker/blob/master/src/main/resources/static/images/app-icon-oracle.png"
+	}
+}

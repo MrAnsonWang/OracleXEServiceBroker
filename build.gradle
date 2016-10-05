@@ -1,0 +1,42 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+	baseName = 'oraclexesvcbrk'
+	version = '1.0.0-RELEASE'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	//mavenCentral()
+	maven { url "http://maven.aliyun.com/nexus/content/groups/public" }
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-freemarker')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	//Added by Anson Wang
+	compile files("/Users/awang/DDriver/Workspace/Hands-On/JDBC/Oracle/ojdbc7.jar")
+	compile("org.springframework.cloud:spring-cloud-cloudfoundry-connector")
+	compile("org.springframework.cloud:spring-cloud-core")
+	compile("org.springframework.cloud:spring-cloud-spring-service-connector")
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
